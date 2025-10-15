@@ -26,3 +26,8 @@ dist-ssr
 # TypeScript build artifacts
 src/**/*.d.ts
 *.tsbuildinfo
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
