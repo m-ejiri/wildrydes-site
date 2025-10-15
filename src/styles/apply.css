@@ -1,0 +1,63 @@
+/* ページ全体 */
+.page-apply {
+  background: #fff;
+  color: #111;
+}
+
+/* ヒーロー（レインボー背景に牛＋樹木を前景で重ねる） */
+.apply-hero {
+  position: relative;
+  background: url("/images/background.png") center top / cover no-repeat;
+  padding: clamp(28px, 6vw, 48px) 0 0;
+  text-align: center;
+  isolation: isolate;
+}
+.apply-hero::after {
+  /* 手前の山/牛の前景写真（任意の画像に差し替えOK） */
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 200px;
+  background: url("/images/apply-foreground.jpg") center bottom / cover
+    no-repeat;
+  z-index: 0;
+}
+.apply-logo {
+  width: 160px;
+  margin: 0 auto 8px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.apply-title {
+  margin: 8px 0 120px; /* 下に前景を見せるための余白 */
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: clamp(28px, 5vw, 48px);
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+/* 本文 */
+.apply-content {
+  padding: 32px 0 80px;
+}
+.prose {
+  width: min(760px, 92%);
+  margin: 0 auto;
+}
+.prose p {
+  line-height: 1.9;
+  font-weight: 700;
+} /* 見本に近い太めの段落 */
+.prose ul {
+  margin: 0 0 18px 1.25em;
+}
+.prose h2 {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 900;
+  margin: 18px 0 8px;
+  letter-spacing: 0.5px;
+}

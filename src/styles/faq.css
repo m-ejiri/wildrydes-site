@@ -1,0 +1,59 @@
+/* ページ全体 */
+.page-faq {
+  background: #fff;
+  color: #111;
+}
+
+/* ヒーロー：上部のレインボー＋左にユニコーン画像を重ねる */
+.faq-hero {
+  position: relative;
+  background: url("/public/images/wr-faq-header.jpg") center top / cover
+    no-repeat;
+  padding: clamp(24px, 6vw, 40px) 0 16px;
+}
+/* .faq-hero::before { */
+/* 左のユニコーン（お手元の画像名に合わせて変更OK） */
+/* content: "";
+  position: absolute;
+  left: max(0px, calc(50% - 600px));
+  top: -20px;
+  width: min(340px, 36vw);
+  aspect-ratio: 1/1;
+  background: url("/images/wr-unicorn-one.png") left bottom / contain no-repeat;
+  transform: translateY(-8%);
+  opacity: 0.95;
+  pointer-events: none;
+} */
+.faq-logo {
+  width: 160px;
+  margin: 0 auto 8px;
+  display: block;
+}
+.faq-title {
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: clamp(24px, 4.5vw, 40px);
+  margin: 8px 0 0;
+}
+
+/* 本文 */
+.container.narrow {
+  width: min(760px, 92%);
+  margin: 0 auto;
+}
+.faq-list {
+  padding: 18px 0 80px;
+}
+.qa {
+  margin: 0;
+}
+.qa dt {
+  font-weight: 900;
+  margin: 22px 0 6px;
+}
+.qa dd {
+  margin: 0 0 18px;
+  line-height: 1.8;
+  color: #374151;
+}

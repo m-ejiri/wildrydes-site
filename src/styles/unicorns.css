@@ -1,0 +1,139 @@
+/* src/styles/unicorns.css */
+
+/* ページ全体 */
+.page-unicorns {
+  background: #fff;
+  color: #1b1f24;
+}
+
+/* ヒーロー（上部レインボー背景） */
+.unic-hero {
+  background: url("/images/background.png") center top / cover no-repeat;
+  padding: 40px 0 24px;
+}
+.unic-logo {
+  width: 180px;
+  display: block;
+  margin: 0 auto 18px;
+}
+.unic-title {
+  text-align: center;
+  font-size: clamp(26px, 4.2vw, 44px);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* 説明文 */
+.unic-intro {
+  padding: 32px 0 48px;
+}
+.prose {
+  width: min(820px, 92%);
+  margin: 0 auto;
+}
+.prose p {
+  line-height: 1.8;
+  color: #374151;
+  font-style: italic;
+}
+
+/* リスト */
+.unicorns-list {
+  width: min(1100px, 96%);
+  margin: 16px auto 80px;
+  display: grid;
+  gap: clamp(40px, 8vw, 80px);
+}
+
+/* 行レイアウト */
+.unic-row {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 900px) {
+  .unic-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .unic-row.alt .left {
+    order: 2;
+  }
+  .unic-row.alt .right {
+    order: 1;
+  }
+}
+
+/* 円形画像＋カラープレート */
+.unic-figure {
+  position: relative;
+}
+.unic-figure img {
+  width: clamp(260px, 38vw, 420px);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+.unic-figure::before {
+  content: "";
+  position: absolute;
+  inset: auto;
+  z-index: -1;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  bottom: -8%;
+  left: -8%;
+  background: #ec4899; /* ピンク */
+}
+.unic-row.alt .unic-figure::before {
+  left: auto;
+  right: -8%;
+  background: #06b6d4; /* シアン */
+}
+.unic-row:last-child .unic-figure::before {
+  background: #f59e0b; /* アンバー */
+}
+
+/* テキスト側 */
+.unic-copy {
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .unic-copy.left {
+    text-align: left;
+    padding-right: clamp(8px, 2vw, 24px);
+  }
+  .unic-copy.right {
+    text-align: right;
+    padding-left: clamp(8px, 2vw, 24px);
+  }
+}
+
+.unic-name {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+.unic-name.pink {
+  color: #e91e63;
+}
+.unic-name.cyan {
+  color: #06b6d4;
+}
+.unic-name.amber {
+  color: #f59e0b;
+}
+
+.unic-breed {
+  color: #8b5e34;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.unic-copy p {
+  line-height: 1.8;
+  color: #374151;
+}

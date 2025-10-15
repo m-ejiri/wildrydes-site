@@ -1,0 +1,91 @@
+.page-auth,
+.auth {
+  width: 100vw;
+  min-height: 100vh;
+  background: url("/images/background.png") center bottom / cover no-repeat
+    fixed;
+}
+
+/* ロゴ */
+.auth-header {
+  text-align: center;
+  padding: 30px 0 60px;
+}
+.auth-header img {
+  width: 240px;
+  max-width: 60vw;
+  display: block;
+  margin: 0 auto;
+}
+
+/* カード */
+.auth-card {
+  width: min(560px, 92vw);
+  margin: 0 auto 80px;
+  background: #fff;
+  color: #1b1f24;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  padding: 28px 28px 24px;
+}
+.auth-card h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.auth-card label {
+  display: block;
+  margin: 12px 0;
+}
+.auth-card label span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+}
+.auth-card input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 12px 10px;
+  font-size: 16px;
+  outline: none;
+}
+.auth-help {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #6b7280;
+  font-size: 14px;
+  margin: 8px 0 4px;
+}
+.auth-help .link {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.btn-primary {
+  background: #f59e0b;
+  color: #fff;
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.auth-foot {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #6b7280;
+}
+.auth-foot .link {
+  color: #f59e0b;
+  text-decoration: none;
+}

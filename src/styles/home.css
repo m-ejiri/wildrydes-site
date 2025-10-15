@@ -1,0 +1,262 @@
+/* ===== Hero ===== */
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(460px, 58vw, 760px);
+  margin-top: 0;
+}
+/* 最背面 */
+.home-hero .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+/* Hero title 画像置換（DevToolsの再現） */
+.home-hero .title {
+  position: relative;
+  z-index: 1;
+  text-indent: -999em;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url("/images/wr-home-top.jpg") center/cover no-repeat;
+  width: 100vw;
+  height: clamp(300px, 45vw, 1000px); /* ★ 画像の見せたい高さ */
+  margin: 0;
+  margin-left: calc(50% - 50vw);
+}
+.home-hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -120px; /* ★ 下へはみ出す量（後で揃える） */
+  width: 100vw;
+  height: 260px; /* ★ グラデ長さ（自然につなげる） */
+  background: linear-gradient(to bottom, rgba(233, 30, 99, 0) 0%, #e91e63 88%);
+  pointer-events: none;
+  z-index: 1;
+}
+/* ボタン（最前面） */
+.home-hero .hero-inner {
+  position: relative; /* button の絶対位置の基準 */
+  padding: clamp(24px, 4vw, 40px) 0 120px;
+  z-index: 1; /* コンテナ自体は中間でOK */
+}
+.home-hero .home-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(120px, 14vw, 220px); /* ★ 画像の中に乗るように“上げる”値 */
+  z-index: 3;
+
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #fff;
+  color: #e91e63;
+  border: 2px solid #fff;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.home-hero .home-button:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+}
+
+/* ===== How it works ===== */
+.home-about {
+  margin-top: -120px; /* ★ ← ::after の bottom と必ず同じ値 */
+  background: #e91e63;
+  padding: clamp(48px, 8vw, 88px) 0;
+  position: relative;
+  z-index: 0;
+}
+.home-about .content {
+  color: #fff;
+  text-align: center;
+}
+
+.home-about-grid {
+  width: min(1100px, 100%);
+  margin: var(--space-8) auto 0;
+  padding: 0 var(--space-5);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .home-about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .home-about-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home-about-block {
+  background: transparent;
+  border: 2px solid #fff4;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+.home-about-block .title {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.home-about-block .title::before {
+  content: "";
+  display: block;
+  margin: 0 auto 1.25rem;
+  width: 11rem;
+  height: 12.75rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.home-about-block .icon-download::before {
+  background-image: url("/images/wr-home-block-1.png");
+}
+.home-about-block .icon-unicorn::before {
+  background-image: url("/images/wr-home-block-2.png");
+}
+.home-about-block .icon-price::before {
+  background-image: url("/images/wr-home-block-3.png");
+}
+.home-about-block .icon-success::before {
+  background-image: url("/images/wr-home-block-4.png");
+}
+
+/* ===== Our Story ===== */
+.home-story {
+  background: url("/public/images/wr-home-about.jpg") center/cover no-repeat;
+  padding: var(--space-10) 0;
+  position: relative;
+}
+.home-story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: #000a; */
+}
+.home-story .container {
+  position: relative;
+  z-index: 1;
+}
+.home-story .section-title {
+  color: #fff;
+}
+.home-story .content {
+  color: #f3f4f6;
+}
+
+/* ===== Sign Up ===== */
+.home-sign-up {
+  background: #0b0b0c;
+  padding: var(--space-10) 0;
+  text-align: center;
+}
+.home-sign-up .icon-w {
+  width: 120px;
+  margin: 0 auto var(--space-5);
+}
+.home-sign-up form {
+  display: flex;
+  gap: 0;
+  width: min(560px, 92%);
+  margin: 0 auto var(--space-5);
+}
+.home-sign-up input[type="email"] {
+  flex: 1;
+  border-radius: 999px 0 0 999px;
+  border: 1px solid #333;
+  background: #1a1d20;
+  color: #fff;
+  padding: 12px 16px;
+  outline: none;
+}
+.home-sign-up button {
+  border-radius: 0 999px 999px 0;
+  border: 0;
+  padding: 12px 18px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+}
+.home-sign-up .apps {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: var(--space-5);
+}
+.home-sign-up .app-icon img {
+  height: 40px;
+}
+.home-sign-up .social {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: var(--space-5);
+  color: #a8abb0;
+  font-size: 14px;
+}
+
+/* ===== Quote ===== */
+.home-quote {
+  background: url("/public/images/wr-home-quote.jpg") center/cover no-repeat;
+  padding: var(--space-10) 0;
+  position: relative;
+  text-align: center;
+}
+.home-quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000a;
+}
+.home-quote .container {
+  position: relative;
+  z-index: 1;
+}
+.home-quote .quote-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.home-quote .quote {
+  font-size: 26px;
+  font-weight: 700;
+}
+.home-quote .quoter {
+  margin-top: 12px;
+  color: #e5e7eb;
+}
+
+/* ===== Kraken Callout ===== */
+.kraken-callout {
+  background: #12a0a6;
+  padding: var(--space-10) 0;
+}
+.kraken-callout .row {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .kraken-callout .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.kraken-callout .title {
+  font-size: 28px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.kraken-callout .content {
+  color: #063a3d;
+  font-weight: 600;
+}
